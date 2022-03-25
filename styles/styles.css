@@ -1,0 +1,343 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/***********************************************************
+					Fonts
+***********************************************************/
+
+@font-face {
+    font-family: 'vtksanimal2Regular';
+    src: url('../fonts/vtks_animal_2-webfont.eot');
+    src: url('../fonts/vtks_animal_2-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/vtks_animal_2-webfont.woff') format('woff'),
+         url('../fonts/vtks_animal_2-webfont.ttf') format('truetype'),
+         url('../fonts/vtks_animal_2-webfont.svg#vtksanimal2Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+/***********************************************************
+						DEFAULTS
+***********************************************************/
+
+html{
+	font-family: Verdana, Geneva, sans-serif;
+	font-size:10px; /* set font-size to 10 for easy math with ems later... */
+	color:#0FF;
+	background:black;	
+}
+
+.container{
+	max-width:1200px;
+	margin:0 auto;
+}
+
+h2{
+	font-family: 'vtksanimal2Regular', Verdana, Geneva, sans-serif; /*add custom font!*/
+	font-size: 2.6em; /* 26px... */
+	padding: 0.5em;
+}
+
+p{
+	font-size: 1.6em;
+	line-height: 1.4em; /* 1.4 times 1.6rem... */
+}
+
+
+/***********************************************************
+						NAV
+***********************************************************/
+nav{
+	height:44px;
+	margin-bottom:20px;
+	border-bottom:2px solid #220044;
+}
+
+nav li{
+	float:left;
+}
+
+nav a{
+	text-decoration:none;
+	display:block;
+	width:72px;
+	margin:0 5px;
+	text-align:center;
+	cursor:pointer;
+}
+
+nav a span{
+	display:none; /* at the smallest size, hide the text */	
+}
+
+nav a img{
+	padding: 0 10px;
+}
+
+nav a:hover, nav a:active, .current{
+	background:#220044;
+	border-top-right-radius:15px;
+	border-top-left-radius:15px;
+}
+
+#play{
+	color:#0FF;
+	float:right;
+	font-family: 'vtksanimal2Regular', Verdana, Geneva, sans-serif; /* custom font to add! */
+	font-size:2.0rem;
+	background:#220044;
+	border:1px solid #0FF;
+	border-radius:10px;
+	padding:0.5em;
+}
+
+#play:hover{
+	background:#0FF;
+	color:#220044;
+	border:1px solid #220044;	
+}
+
+
+
+/***********************************************************
+						CONTENT
+***********************************************************/
+header img{
+	width:100%;
+}
+
+/* hide large image after adding media query */
+.imgLarge{
+	display:none;
+}
+
+section{
+	border-top:2px solid #220044;	
+}
+
+.info{
+	padding:2% 0 0.5em 5%; /* 5% of element...width? */	
+}
+
+.info span{
+	font-size: 1.8rem; /* make sure it refers back to 'root' em */
+	display:block; /* sit vertically */
+}
+
+.desc{
+	padding: 0 5% 5%;	
+}
+
+.desc img{
+	margin: 5px 10px 5px 0;
+	float:left; /* floating an image makes text in the same container wrap */
+	border-radius:10px;	 /* round corners! */
+}
+
+
+footer p{
+	text-align:right;
+	padding:10px;
+	font-size:1.0rem;		
+}
+
+
+/***********************************************************
+					MEDIA QUERIES!
+***********************************************************/
+
+@media screen and (min-width:786px){
+	#container{
+		padding:0 3%;	
+	}
+	
+	header{
+		text-align:center;	
+	}
+	
+	.imgMobile{
+		display:none;	
+	}
+	
+	.imgLarge{
+		display:inline-block;
+		height:65vh; /* view-height: 60% of the viewport's height! */
+		width:auto; /* override width:100% on image above */
+	}
+	
+	h2{
+		font-size:3.6rem;	
+	}
+	
+	/*************************************************
+						NAV - 768++
+	*************************************************/
+	
+	nav li a{
+		height:44px;
+		width:142px;
+	}
+	
+	nav li a span{
+		display:block;
+		font-size:1.6rem;
+		color:#0FF;
+		float:left;
+		line-height:2.5em;
+	}
+	
+	nav a img{
+		width:22px;
+		padding: 0.7em 5px 0 15px;
+		float:left;
+	}
+	
+	/*************************************************
+					CONTENT - 768++
+	*************************************************/
+	.desc{
+		padding: 0 0 5%;	
+	}
+	
+	.info{
+		padding-left:65px;	
+	}
+	
+	.info span{
+		display:inline;
+		padding-right:40px;	
+	}
+	
+	.desc img{
+		margin-top:-25px;	
+	}
+		
+}
+
+
+@media screen and (min-width:960px){
+	#container{
+		max-width:1020px;
+		margin:0 auto;	
+	}
+	
+	.imgLarge{
+		height:auto;
+		width:100%;
+	}
+	
+	/*************************************************
+					CONTENT - 960++
+	*************************************************/
+	section{
+		width:45%;
+		padding:0 2.5%;
+		float:left;
+	}
+	
+	section:nth-of-type(2n-1){
+		clear:both;		
+	}
+	
+	section:last-of-type{
+		float:none;
+		padding-right:52.5%;
+	}
+	
+	.info{
+		padding-top:15px;	
+	}
+	
+	.info span{
+		display:block;
+		padding-top:5px;	
+	}
+	
+	.desc img{
+		margin-top:-60px;	
+	}
+}
+
+
+@media print{
+	/*************************************************
+					Print Styles
+	*************************************************/
+	html{
+		background:white;
+		color:black;
+	}
+
+	nav{
+		display: none;
+	}
+
+	section{
+		border:none;
+	}
+
+	.desc{
+		padding:0 5% 10px;
+	}
+
+	header{
+		width:100%;
+		height:230px;
+		overflow:hidden;
+	}
+
+	.imgMobile{
+		width:100%;
+		margin-top:-35px;
+	}
+
+
+}
