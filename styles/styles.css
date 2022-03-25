@@ -341,3 +341,15 @@ footer p{
 
 
 }
+
+@media screen and (orientation: portrait){
+	html{
+		background: rgb(150,150,150);
+	}
+}
+
+@media screen and (orientation: landscape){
+	html{
+		background: rgb(255,255,150);
+	}
+}
