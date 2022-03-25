@@ -305,3 +305,11 @@ footer p{
 		margin-top:-60px;	
 	}
 }
+
+@media print{
+	html{
+		background: white;
+		color: black
+	}
+
+}
